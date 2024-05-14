@@ -5,7 +5,7 @@ int main()
 {
     char str[500] = {0,};
     int len, i;
-    while (strcmp(str, "END") != 0)
+    while (1)
     {
         gets(str);
         len = strlen(str);
