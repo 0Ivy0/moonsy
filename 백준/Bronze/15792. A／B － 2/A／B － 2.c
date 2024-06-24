@@ -16,7 +16,7 @@ int main()
     }
     else printf("0");
     if (a % b != 0) printf(".");
-    for (i = 0; i < 100; i++)
+    for (i = 0; i < 1000; i++)
     {
         a *= 10;
         s = a / b;
