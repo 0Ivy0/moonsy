@@ -2,18 +2,12 @@
 
 int main()
 {
-    int t, n, yaho = 0;
+    int t, n;
     scanf("%d", &t);
     for (int i = 0; i < t; i++)
     {
         scanf("%d", &n);
-        for (int j = 0; j < n; j++)
-        {
-            if (j % 2 == 0) yaho++;
-            else yaho += 3;
-        }
-        printf("%d\n", yaho);
-        yaho = 0;
+        printf("%d\n", (n / 2 * 3) + ((n + 1) / 2));
     }
     return 0;
 }
