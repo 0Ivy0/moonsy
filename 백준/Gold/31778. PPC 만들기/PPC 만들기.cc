@@ -5,21 +5,34 @@ using namespace std;
 int main()
 {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-    int n,k;
-    string s;
-    cin >> n >> k >> s;
-    int i = 0, j = s.length()-1;
-    while(i<j && k>0){
-        k--;
-        while(i < j && s[i]!='C')i++;
-        while(i < j && s[j]!='P')j--;
-        swap(s[i],s[j]);
+    int n, k, s, e;
+    long long sum = 0, plus, yaho = 0;
+    string str;
+    cin >> n >> k >> str;
+    s = 0;
+    e = n - 1;
+    for (int i = 0; i < k; i++)
+    {
+        while (s < e && str[s] != 'C')
+        {
+            s++;
+        }
+        while (s < e && str[e] != 'P')
+        {
+            e--;
+        }
+        if (s >= e) break;
+        swap(str[s], str[e]);
     }
-    long long pcnt = 0;
-    long long ssum = 0;
-    for(auto x : s){
-        if(x == 'P') pcnt++;
-        else if(x == 'C' && pcnt >=2) ssum += pcnt * (pcnt-1)/2;
+    for (int i = 0; i < n; i++)
+    {
+        if (str[i] == 'P') plus = 1;
+        else plus = 0;
+        sum += plus;
+        if (str[i] == 'C' && i >= 2)
+        {
+            yaho += sum * (sum - 1) / 2;
+        }
     }
-    cout << ssum;
+    cout << yaho;
 }
